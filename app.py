@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'ap
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 bc = Bcrypt(app)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
